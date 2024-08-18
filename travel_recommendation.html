@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendation Website</title>
+    <script src="travel_recommendation.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar input[type="text"] {
+            float: left;
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 16px;
+            border: none;
+            font-size: 17px;
+        }
+
+        .navbar button {
+            float: left;
+            padding: 10px 16px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .navbar button:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .home {
+            background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D');
+            background-size: cover;
+            color: black;
+            padding: 50px;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .about-us, .contact-us {
+            padding: 20px;
+        }
+
+        .contact-us form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-us input, .contact-us textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .contact-us button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-us button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="travel_recommendation.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <input type="text" id="searchInput" placeholder="Search for recommendations...">
+        <button onclick=search()>Search</button>
+        <button onclick="clearResults()">Reset</button>
+    </div>
+
+    <!-- Home Page -->
+    <div class="home container" id="homePage">
+        <h1>Welcome to Our Travel Recommendation Website</h1>
+        <p>Discover the best places to visit, tailored just for you.</p>
+    </div>
+
+    <!-- About Us Page -->
+    <div class="about-us container" id="aboutPage" style="display: none;">
+        <h2>About Us</h2>
+        <p>We are a passionate team dedicated to helping you find the best travel destinations.</p>
+        <h3>Meet the Team</h3>
+        <ul>
+            <li>John Doe - CEO</li>
+            <li>Jane Smith - CTO</li>
+            <li>Emily Davis - Lead Developer</li>
+        </ul>
+    </div>
+
+    <!-- Contact Us Page -->
+    <div class="contact-us container" id="contactPage" style="display: none;">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Recommendations Section -->
+    <div class="container" id="recommendations" style="display: none;">
+        <h2>Recommendations</h2>
+        <div id="recommendationResults"></div>
+    </div>
+
+    
+</body>
+</html>
